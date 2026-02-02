@@ -1,0 +1,18 @@
+/* TEAM */
+Developer: Mario López Gastón
+Website: (sin dominio por ahora)
+Email: m.lopezgaston1@gmail.com
+Location: Badajoz, Extremadura, España
+Instagram: https://www.instagram.com/mario_38lg/
+LinkedIn: https://www.linkedin.com/in/mario-lópez-gastón/
+GitHub: https://github.com/mario38lg/
+
+/* SITE */
+Last update: 2026-02-02
+Language: Spanish (Spain)
+Standards: HTML5, CSS3, JavaScript, Accessibility (WCAG)
+Tools: VS Code, GitHub, Font Awesome
+Frameworks: jQuery, custom CSS
+
+/* THANKS */
+¡Gracias por visitar mi portafolio!

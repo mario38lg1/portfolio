@@ -1,8 +1,0 @@
-User-agent: *
-Allow: /
-
-# Sitemap location
-Sitemap: /sitemap.xml
-
-# Optimización para single page
-Crawl-delay: 1

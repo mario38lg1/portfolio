@@ -7,7 +7,7 @@ import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
-const pdf = "/CV_Mario_Lopez_Gaston.pdf";
+const pdf = `${process.env.PUBLIC_URL}/CV_Mario_Lopez_Gaston.pdf`;
 
 function ResumeNew() {
   const [height, setHeight] = useState(640);

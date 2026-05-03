@@ -14,7 +14,7 @@ import {
 
 import { CgFileDocument } from "react-icons/cg";
 
-const pdf = "/CV_Mario_Lopez_Gaston.pdf";
+const pdf = `${process.env.PUBLIC_URL}/CV_Mario_Lopez_Gaston.pdf`;
 
 function NavBar() {
   const [expand, updateExpanded] = useState(false);

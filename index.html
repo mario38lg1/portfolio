@@ -35,5 +35,37 @@
 <body>
 	<noscript>You need to enable JavaScript to run this app.</noscript>
 	<div id="root"></div>
+	<script>
+		window.addEventListener("load", function () {
+			function pruneLuciaCard() {
+				var cards = document.querySelectorAll(".project-card-view");
+				for (var i = 0; i < cards.length; i++) {
+					var title = cards[i].querySelector(".card-title");
+					if (!title || title.textContent.indexOf("Lucía Macías") === -1) continue;
+					var buttons = cards[i].querySelectorAll("a.btn, button.btn");
+					if (buttons.length > 1) {
+						buttons[0].remove();
+					}
+				}
+			}
+
+			function addGamekaltCard() {
+				var row = document.querySelector(".project-section .row");
+				if (!row || row.querySelector("[data-gamekalt-card='1']")) return;
+				var column = document.createElement("div");
+				column.className = "col-md-6 project-card";
+				column.setAttribute("data-gamekalt-card", "1");
+				column.innerHTML = '<div class="project-card-view card"><img class="card-img-top" src="/portfolio/gamekalt%20logo.png" alt="GameKalt"><div class="card-body"><div class="card-title h5">GameKalt</div><p class="card-text" style="text-align:justify !important;display:block !important;-webkit-line-clamp:unset !important;-webkit-box-orient:initial !important;overflow:visible !important;white-space:normal !important;max-height:none !important">🚀 Sitio web en producción.<br><br>Una base de datos con videojuegos para valorar y descubrir, hecha con Laravel.</p><a class="btn btn-primary" href="https://gamekalt.com" target="_blank" rel="noreferrer">Ver pagina</a></div></div>';
+				row.appendChild(column);
+			}
+
+			pruneLuciaCard();
+			addGamekaltCard();
+			new MutationObserver(function () {
+				pruneLuciaCard();
+				addGamekaltCard();
+			}).observe(document.body, { childList: true, subtree: true });
+		});
+	</script>
 </body>
 </html>

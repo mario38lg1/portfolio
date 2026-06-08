@@ -37,6 +37,18 @@
 	<div id="root"></div>
 	<script>
 		window.addEventListener("load", function () {
+			function removeLuciaButtonIcon() {
+				var cards = document.querySelectorAll(".project-card-view");
+				for (var i = 0; i < cards.length; i++) {
+					var title = cards[i].querySelector(".card-title");
+					if (!title || title.textContent.indexOf("Lucía Macías") === -1) continue;
+					var button = cards[i].querySelector("a.btn.btn-primary[href='https://luciamaciasescritora.es']");
+					if (button && button.firstElementChild) {
+						button.firstElementChild.remove();
+					}
+				}
+			}
+
 			function pruneLuciaCard() {
 				var cards = document.querySelectorAll(".project-card-view");
 				for (var i = 0; i < cards.length; i++) {
@@ -60,9 +72,11 @@
 			}
 
 			pruneLuciaCard();
+			removeLuciaButtonIcon();
 			addGamekaltCard();
 			new MutationObserver(function () {
 				pruneLuciaCard();
+				removeLuciaButtonIcon();
 				addGamekaltCard();
 			}).observe(document.body, { childList: true, subtree: true });
 		});
